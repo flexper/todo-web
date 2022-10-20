@@ -1,0 +1,5 @@
+mutation updateTodo($todoId: String!, $todoUpdate: TodoUpdate!) {
+  updateTodo(todoId: $todoId, todoUpdate: $todoUpdate) {
+    id
+  }
+}
