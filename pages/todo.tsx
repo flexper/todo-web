@@ -10,7 +10,7 @@ import { useInvalidateQueries } from '../services/apis/react-query/useInvalidate
 
 const Todos = () => {
   const { isConnected } = useNextAuthProtected();
-  const invalidateQueriues = useInvalidateQueries();
+  const invalidateQueries = useInvalidateQueries();
   const { data, isLoading: isLoadingData } = useGetTodosQuery(undefined, { enabled: isConnected });
   const { mutateAsync: mutateCreate, isLoading: isLoadingCreate } = useCreateTodoMutation();
 
@@ -24,7 +24,7 @@ const Todos = () => {
     await mutateCreate({
       todoCreate: { text: data.text },
     });
-    invalidateQueriues(['getTodos']);
+    invalidateQueries(useGetTodosQuery.getKey());
   };
 
   return (

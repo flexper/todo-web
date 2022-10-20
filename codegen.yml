@@ -9,4 +9,5 @@ generates:
       - "typescript-react-query"
     config:
       skipTypename: true
+      exposeQueryKeys: true
       fetcher: '../../react-query/fetcher#customFetcher'
